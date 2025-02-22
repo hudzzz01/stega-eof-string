@@ -15,8 +15,9 @@ public class View {
 
     }
 
-    public void hasil(Integer[] result, String namaFile){
-        if(result[0] == 1) {
+    public void hasil(String[] result, String namaFile){
+
+        if(result[0] == "1") {
             System.out.println("berhasil menyimpan pesan ke dalam gambar");
             System.out.println("gambar tersimpan di folder OutputImage");
             System.out.println("OutputImage/" + namaFile);

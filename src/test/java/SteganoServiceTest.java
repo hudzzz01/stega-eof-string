@@ -14,22 +14,22 @@ public class SteganoServiceTest {
     void shoutCreateImageAndInsertMessage(){
         String message = "Hudzaifah";
         File inputImage = new File("InputImage/testing2.jpeg");
-        Integer[] result = steganoService.stegano(message, inputImage);
+        String[] result = steganoService.stegano(message, inputImage);
         System.out.println(result[0]);
         System.out.println(result[1]);
 
-        assertEquals(1, result[0]);
+        assertEquals("1", result[0]);
     }
 
     @Test
     void shoutNotCreateImageAndInsertMessage(){
         String message = "Hudzaifah";
         File inputImage = new File("InputImage/temp.png");
-        Integer[] result = steganoService.stegano(message, inputImage);
+        String[] result = steganoService.stegano(message, inputImage);
         System.out.println(result[0]);
         System.out.println(result[1]);
 
-        assertEquals(0, result[0]);
+        assertEquals("0", result[0]);
     }
 
     @Test

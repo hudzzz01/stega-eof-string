@@ -21,7 +21,7 @@ public class Main {
 
                 Path inputFilePath = Path.of("InputImage/" + inputFileName);
                 File inputFile = inputFilePath.toFile();
-                Integer[] result = steganoService.stegano(message, inputFile);
+                String[] result = steganoService.stegano(message, inputFile);
                 view.hasil(result,inputFile.getName());
 
             }else if (pilihan == 2){

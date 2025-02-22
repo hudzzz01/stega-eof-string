@@ -9,8 +9,9 @@ import java.nio.file.Path;
 public class SteganoService {
     IOimage iOimage = new IOimage();
 
-    public Integer[] stegano(String message, File inputImage){
-        String output = "OutputImage/" + System.currentTimeMillis() + "-" + inputImage.getName();
+    public String[] stegano(String message, File inputImage){
+        String imageName = System.currentTimeMillis() + "-" + inputImage.getName();
+        String output = "OutputImage/" + imageName;
         Path outputPath = Path.of(output);
         File outputImage = outputPath.toFile();
         byte [] imageByte = null;
@@ -18,12 +19,12 @@ public class SteganoService {
             imageByte = getImageByte(inputImage);
         } catch (InvalidReadImageException e) {
             System.out.println(e.getMessage());
-            return new Integer[]{0,0};
+            return new String[]{"0","0", "0"};
         }
         byte [] messageByte = getMessageByte(message);
         byte [] newData = combineByte(imageByte, messageByte);
-        if(writeByteToFile(newData, outputImage)) return new Integer[]{1, messageByte.length};
-        return new Integer[]{0,0};
+        if(writeByteToFile(newData, outputImage)) return new String[]{"1", String.valueOf(messageByte.length), imageName};
+        return new String[]{"0","0","0"};
     }
 
     public String[] extrackMessage(File imageForExtractMessage, int messageLength){
