@@ -10,7 +10,7 @@ public class SteganoService {
     IOimage iOimage = new IOimage();
 
     public Integer[] stegano(String message, File inputImage){
-        String output = "OutputImage/" + inputImage.getName();
+        String output = "OutputImage/" + System.currentTimeMillis() + "-" + inputImage.getName();
         Path outputPath = Path.of(output);
         File outputImage = outputPath.toFile();
         byte [] imageByte = null;
