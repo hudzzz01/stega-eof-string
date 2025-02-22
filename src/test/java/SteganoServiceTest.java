@@ -13,7 +13,7 @@ public class SteganoServiceTest {
     @Test
     void shoutCreateImageAndInsertMessage(){
         String message = "Hudzaifah";
-        File inputImage = new File("InputImage/testing2.png");
+        File inputImage = new File("InputImage/testing2.jpeg");
         Integer[] result = steganoService.stegano(message, inputImage);
         System.out.println(result[0]);
         System.out.println(result[1]);
@@ -34,10 +34,10 @@ public class SteganoServiceTest {
 
     @Test
     void shoutExtractMessage(){
-        String[] result = steganoService.extrackMessage(new File("imageForExtractMessage/testing2.png"), 9);
+        String[] result = steganoService.extrackMessage(new File("imageForExtractMessage/testing2.jpeg"), 9);
         System.out.println(result[0]);
         System.out.println(result[1]);
-        assertEquals("indonesia", result[1]);
+        assertEquals("Hudzaifah", result[1]);
     }
 
     @Test
