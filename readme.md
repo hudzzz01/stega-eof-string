@@ -22,7 +22,7 @@ Simple Way use add to POM.xml from jitpack.io
         <dependency>
             <groupId>com.github.hudzzz01</groupId>
             <artifactId>stega-eof-string</artifactId>
-            <version>-SNAPSHOT</version>
+            <version>-3f39500c83-1</version>
         </dependency>
 </dependencies>
 
