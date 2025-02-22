@@ -1,15 +1,42 @@
 ### @kentung 🚩
+
 ### hudzaifahzzzzzz@gmail.com
+
 #### +62895-3669-75992
 
+Simple Way use add to POM.xml from jitpack.io 
+#
+[![](https://jitpack.io/v/hudzzz01/stega-eof-string.svg)](https://jitpack.io/#hudzzz01/stega-eof-string)
+```
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
+```
+
+```
+<dependencies>
+        <dependency>
+            <groupId>com.github.hudzzz01</groupId>
+            <artifactId>stega-eof-string</artifactId>
+            <version>-SNAPSHOT</version>
+        </dependency>
+</dependencies>
+
+```
 
 # SteganoService
 
 ## Deskripsi
-`SteganoService` adalah layanan yang menyediakan fungsi steganografi dasar untuk menyisipkan dan mengekstrak pesan dari gambar.
+
+`SteganoService` adalah layanan yang menyediakan fungsi steganografi dasar untuk menyisipkan dan mengekstrak pesan dari
+gambar.
 
 ## Fitur
+
 1. **Menyisipkan Pesan ke Gambar (`stegano`)**
     - Membaca gambar sebagai byte array.
     - Mengonversi pesan ke byte array.
@@ -24,6 +51,7 @@
 ## Struktur Kode
 
 ### `stegano(String message, File inputImage) -> Integer[]`
+
 - **Parameter**:
     - `message`: Pesan yang akan disisipkan.
     - `inputImage`: File gambar yang akan digunakan.
@@ -32,6 +60,7 @@
     - `[0, 0]` jika gagal.
 
 ### `extrackMessage(File imageForExtractMessage, int messageLength) -> String[]`
+
 - **Parameter**:
     - `imageForExtractMessage`: File gambar yang berisi pesan tersembunyi.
     - `messageLength`: Panjang pesan yang akan diekstrak.
@@ -40,7 +69,9 @@
     - `{"0", ""}` jika gagal.
 
 ### Fungsi Pendukung
-- `extractMessageData(int startIndex, int messageLength, byte[] imageData) -> byte[]`: Mengambil pesan tersembunyi dari byte array gambar.
+
+- `extractMessageData(int startIndex, int messageLength, byte[] imageData) -> byte[]`: Mengambil pesan tersembunyi dari
+  byte array gambar.
 - `toStringFromByte(byte[] data) -> String`: Mengonversi byte array menjadi string.
 - `getImageByte(File file) -> byte[]`: Membaca gambar dan mengembalikannya dalam bentuk byte array.
 - `getMessageByte(String message) -> byte[]`: Mengonversi string pesan menjadi byte array.
@@ -48,6 +79,7 @@
 - `writeByteToFile(byte[] data, File file) -> Boolean`: Menulis kembali data yang telah dimodifikasi ke file output.
 
 ## Cara Penggunaan
+
 1. **Menyisipkan Pesan**:
    ```java
    SteganoService steganoService = new SteganoService();
@@ -63,5 +95,7 @@
    Jika `extractedMessage[0] == "1"`, maka pesan berhasil diekstrak.
 
 ## Kesimpulan
-Layanan ini menyediakan metode sederhana untuk menyisipkan dan mengekstrak pesan dari gambar menggunakan teknik steganografi berbasis byte array.
+
+Layanan ini menyediakan metode sederhana untuk menyisipkan dan mengekstrak pesan dari gambar menggunakan teknik
+steganografi berbasis byte array.
 
